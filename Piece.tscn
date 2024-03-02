@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr4nqlmnbkgit"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5x324"]
+height = 0.1
+
+[sub_resource type="Skin" id="Skin_in6qv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2mk0a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdabt"]
+next_pass = SubResource("ShaderMaterial_2mk0a")
+albedo_color = Color(0.576471, 0.576471, 0.588235, 1)
+
+[node name="Piece" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_5x324")
+skin = SubResource("Skin_in6qv")
+surface_material_override/0 = SubResource("StandardMaterial3D_tdabt")
