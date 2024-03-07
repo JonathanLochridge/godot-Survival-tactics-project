@@ -10,9 +10,9 @@ const GRAVITY_STRENGTH = 7
 const MIN_TIME_FOR_ATTACK = 1
 
 # class
-@export var pawn_class : Utils.PAWN_CLASSES
+@export var pawn_class : Utils.PAWN_CLASSES #getting class from definitions here.
 @export var pawn_strategy : Utils.PAWN_STRATEGIES
-@export var pawn_name : String = "Trooper"
+@export var pawn_name : String = "Trooper" #Default pawn name seems to not be releated to class, unsure?
 
 # pawn available actions
 var can_move = true

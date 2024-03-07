@@ -58,7 +58,7 @@ static func create_material(color, texture=null, shaded_mode=0):
 
 static func get_pawn_sprite(pawn_class):
 	match pawn_class:
-		0: return load(KNIGHT_SPRITE)
+		0: return load(KNIGHT_SPRITE) #Class names/sprites are here I think. So knight is 0?
 		1: return load(ARCHER_SPRITE)
 		2: return load(CHEMIST_SPRITE)
 		3: return load(CLERIC_SPRITE)
@@ -112,7 +112,7 @@ static func get_pawn_attack_power(pawn_class):
 
 
 static func get_pawn_health(pawn_class):
-	match pawn_class:
+	match pawn_class: #Suggests pawn_class is the first number here. But it might have an alias somehow?
 		0: return 50
 		1: return 35
 		2: return 30
