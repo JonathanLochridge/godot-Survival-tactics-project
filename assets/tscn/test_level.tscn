@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://conliaxesyag8"]
+[gd_scene load_steps=10 format=3 uid="uid://conliaxesyag8"]
 
 [ext_resource type="PackedScene" uid="uid://dwbmgds45ep4o" path="res://assets/tscn/test_arena.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://1ujfoei6r514" path="res://assets/tscn/tactics_camera.tscn" id="2"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://src/player_controller.gd" id="5"]
 [ext_resource type="Script" path="res://src/enemy_controller.gd" id="6"]
 [ext_resource type="PackedScene" uid="uid://6eofg7n4asn5" path="res://assets/tscn/pawn.tscn" id="8"]
+[ext_resource type="Script" path="res://assets/tscn/Spawner 1.gd" id="8_78p13"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_myy6k"]
 
 [node name="Level" type="Node3D"]
 script = ExtResource("3")
@@ -16,6 +19,11 @@ script = ExtResource("3")
 [node name="TacticsCamera" parent="." instance=ExtResource("2")]
 
 [node name="Arena" parent="." instance=ExtResource("1")]
+
+[node name="Spawner 1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3, 1, 8)
+mesh = SubResource("BoxMesh_myy6k")
+script = ExtResource("8_78p13")
 
 [node name="Player" type="Node3D" parent="."]
 script = ExtResource("5")
