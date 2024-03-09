@@ -11,6 +11,8 @@ var targets = null
 
 var ui_control : TacticsPlayerControllerUI = null
 
+var spawn_count = 1
+
 
 func can_act():
 	for p in get_children():
@@ -20,6 +22,7 @@ func can_act():
 
 func reset(): 
 	for p in get_children(): p.reset()
+	spawn_count -= 1
 
 
 func configure(my_arena, my_camera, my_ui_control):
@@ -93,7 +96,11 @@ func spawn(): #presumably this never runs because the if statement need to call 
 	#PawnCopies.z= 0
 	add_child(PawnCopies) #This is when it branches off and gives the error.
 	pass
+	
 func _process(_delta):
 	if Input.is_action_pressed("spawn_button"):
 		spawn()#Where is the missing tab?
+	if spawn_count == 0:
+		spawn()
+		spawn_count = 2
 	pass
