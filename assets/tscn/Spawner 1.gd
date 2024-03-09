@@ -24,6 +24,6 @@ func spawn(): #presumably this never runs because the if statement need to call 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_pressed("spawn_button"): #No idea why this is giving an error?
-		spawn()#Where is the missing tab?
+	#if Input.is_action_pressed("spawn_button"): #No idea why this is giving an error?
+		#spawn()#Where is the missing tab?
 	pass

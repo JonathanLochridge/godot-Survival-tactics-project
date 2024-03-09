@@ -81,3 +81,19 @@ func act(delta):
 		2: move_pawn()
 		3: choose_pawn_to_attack()
 		4: attack_pawn(delta)
+		
+		
+func spawn(): #presumably this never runs because the if statement need to call this has an error that seems syntx related?
+	var PawnEnemy = load("res://assets/tscn/pawn.tscn") # Replace with function body.
+	var PawnCopies = PawnEnemy.instantiate()
+	PawnCopies.pawn_class = 6 #I suspect this won't work but it is my current best guess?
+	PawnCopies._ready() #Runs with this but nothing actually happens.
+	#PawnCopies.x = 0
+	#PawnCopies.y= 0
+	#PawnCopies.z= 0
+	add_child(PawnCopies) #This is when it branches off and gives the error.
+	pass
+func _process(_delta):
+	if Input.is_action_pressed("spawn_button"):
+		spawn()#Where is the missing tab?
+	pass
